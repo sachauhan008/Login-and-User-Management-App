@@ -5,8 +5,8 @@ import { toast } from 'react-toastify';
 
 function Login() {
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('sachauhan008@gmail.com');
+  const [password, setPassword] = useState('123456');
 
   const handleLogin = (e) => {
     e.preventDefault();
