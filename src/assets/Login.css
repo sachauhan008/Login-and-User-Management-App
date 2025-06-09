@@ -1,49 +1,83 @@
-body {
+/* ===== Reset and Base Styles ===== */
+* {
   margin: 0;
   padding: 0;
-  background-color: #001f20;
-  font-family: Arial, sans-serif;
+  box-sizing: border-box;
 }
 
+body {
+  background-color: #001f20;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+}
+
+/* ===== Login Container ===== */
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding: 20px;
+  min-height: 100vh;
 }
 
+/* ===== Login Form ===== */
 .login-form {
-  text-align: center;
-  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  background-color: #012e2f;
+  padding: 30px 20px;
   border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .login-form h2 {
   color: white;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  font-size: 24px;
 }
 
+/* ===== Input Fields ===== */
 .login-form input {
-  display: block;
-  width: 300px;
+  width: 100%;
   padding: 12px;
-  margin: 10px auto;
+  margin: 10px 0;
   border: none;
   border-radius: 6px;
   font-size: 16px;
 }
 
+/* ===== Button ===== */
 .login-form button {
-  padding: 10px 20px;
+  width: 100%;
+  padding: 12px;
   background-color: blue;
   color: white;
   font-size: 16px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .login-form button:hover {
   background-color: #0000cc;
-  transform: scale(1.05);
+  transform: scale(1.03);
+}
+
+/* ===== Responsive Breakpoints ===== */
+@media (max-width: 480px) {
+  .login-form h2 {
+    font-size: 20px;
+  }
+
+  .login-form {
+    padding: 25px 15px;
+  }
+
+  .login-form input,
+  .login-form button {
+    font-size: 14px;
+    padding: 10px;
+  }
 }

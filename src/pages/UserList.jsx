@@ -10,7 +10,7 @@ const UserList = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const users = useSelector((state) => state.users.usersList);
-  const [deleteUserId, setDeleteUserId] = useState(null); 
+  const [deleteUserId, setDeleteUserId] = useState(null);
 
   useEffect(() => {
     dispatch(getUsers());
@@ -46,12 +46,12 @@ const UserList = () => {
           <tbody>
             {users.map((user, index) => (
               <tr key={user.id}>
-                <td>{index + 1}</td>
-                <td>{user.name}</td>
-                <td>{user.username}</td>
-                <td>{user.email}</td>
-                <td>{user.phone}</td>
-                <td>
+                <td data-label="#"> {index + 1} </td>
+                <td data-label="Name">{user.name}</td>
+                <td data-label="Username">{user.username}</td>
+                <td data-label="Email">{user.email}</td>
+                <td data-label="Phone">{user.phone}</td>
+                <td data-label="Actions">
                   <button
                     className="edit-btn"
                     onClick={() => handleEdit(user.id)}
@@ -60,7 +60,7 @@ const UserList = () => {
                   </button>
                   <button
                     className="delete-btn"
-                    onClick={() => setDeleteUserId(user.id)} 
+                    onClick={() => setDeleteUserId(user.id)}
                   >
                     Delete
                   </button>
@@ -81,7 +81,7 @@ const UserList = () => {
                 Cancel
               </button>
               <button className="confirm" onClick={confirmDelete}>
-              Delete
+                Delete
               </button>
             </div>
           </div>
